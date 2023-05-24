@@ -1,0 +1,163 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .demo1 {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #CN-42 {
+      transform: translate(0, -100px) scale(1);
+    }
+
+    :root {
+      --dark-color: #635bff;
+      --light-color: #80e9ff;
+    }
+
+    .svg4 svg {
+      cursor: pointer;
+    }
+
+    #darkGroup {
+      fill: var(--dark-color);
+    }
+
+    #lightGroup {
+      fill: var(--light-color);
+    }
+
+    #dark1,
+    #light1,
+    #dark2 {
+      transition: all 1s ease;
+    }
+
+    #dark2 {
+      transform: translateX(-100%);
+    }
+
+    .svg4 svg:hover #light1 {
+      transform: translateX(20%);
+    }
+
+    .svg4 svg:hover #dark1 {
+      transform: translateX(40%);
+      opacity: 0;
+    }
+
+    .svg4 svg:hover #dark2 {
+      transform: translateX(0%);
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn2">增</button>
+  <button id="btn1">改</button>
+  <button id="btn3">Free SVG Maps path</button>
+  <button id="btn4">svg动画</button>
+  <div class="demo1">
+    <svg width="300" height="600" style="display: block;">
+      <line onmouseover="this.setAttribute('stroke','red')" onmouseleave="this.setAttribute('stroke','green')" id="l1"
+        x1="100" y1="100" x2="200" y2="240" stroke="red" stroke-width="20" />
+    </svg>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id=“svg”> -->
+    <svg id='l2' viewBox="0 0 300 300">
+      <circle />
+      <rect onmouseleave="this.setAttribute('stroke','green')" />
+    </svg>
+    <svg id='l3' style="display: block;">
+      <path xmlns="http://www.w3.org/2000/svg" id="CN-42" title="Hubei" class="land"
+        d="M455.19,379.99L455.91,378.8L455.24,377.48L455.82,376.84L455.27,375.63L455.71,374.48L455.48,372.95L454.1,371.55L454.5,369.56L455.89,367.96L455.67,367.18L459.35,367.19L460.7,367.87L461.62,366.83L462.56,367.17L463.09,366.59L462.43,365.74L462.26,363.96L460.81,363L458.8,362.41L457.91,362.91L457.5,362.48L457.84,360.05L453.39,358.82L454.25,357.64L455.44,357.61L455.88,356.96L456.91,357.6L458.61,357.38L460.87,358.22L462.56,357.96L463.42,358.71L465.86,358.52L467.6,357.27L468.08,358.78L468.79,358.78L469.46,359.66L469.9,358.89L470.81,358.84L470.99,357.99L472.02,358L472.9,357.23L472.9,357.23L473.82,358.21L473.61,358.75L474.29,358.39L475.52,359.8L474.98,360.47L476.12,360.49L476.56,361.52L476.27,362.83L476.72,362.58L478.36,364.69L479.03,364.49L478.44,365.14L480.34,367.17L481.2,366.56L481.27,366.99L482.22,367.02L484.35,368.52L485.14,368.32L485.81,369.23L486.48,368.99L487.62,370.28L488.65,370.19L489.83,371.16L490.29,370.53L491.34,370.77L492.69,370.03L495.39,370.88L496.74,370.09L498.23,370.47L498.71,369.69L500.15,370.39L501.06,369.65L503.72,371.95L506.28,370.68L506.8,369.78L507.63,369.84L508.13,370.63L507.74,372.32L508.28,373.06L508.08,374.13L507.64,374.17L508.34,375.42L507.93,376.09L508.64,376.48L509.09,378.28L509.94,377.8L510.4,378.1L510.73,379.6L513.26,378.19L514.04,378.49L514.77,379.71L516.74,379.99L518.3,379.48L518.06,382.55L518.96,382.09L521.58,383.99L523.32,383.43L523.67,383.85L523.94,383.04L524.98,383.13L525.64,381.86L526.63,382.61L526.44,384.54L527.56,385.14L528.33,384.83L528.33,384.83L529.52,386.78L530.32,387.03L530.97,388.6L531.94,387.66L533.39,389.1L534.7,388.6L535.54,390.11L536.87,390.53L537.23,391.28L534.62,392.72L534.62,394.05L533.52,394.35L533.26,395.38L535.21,397.8L534.97,398.75L535.59,399.16L534.83,399.78L535.09,400.83L536.06,401.04L537.12,402.37L537.23,405.88L538,407.92L538,407.92L536.9,409L535.39,409.37L532.22,407.47L530.11,407.67L529.6,409.12L527.3,410.79L527.02,410.27L525.04,409.96L525.35,411.16L525.84,411.25L525.65,412.37L523.67,411.53L523.01,412L523.11,412.54L522.42,412.14L522,412.86L522.33,413.36L522.94,413.02L522.22,414.12L520.54,414.55L519.53,414.08L517.49,415.13L514.4,414.71L514.16,416.39L511.86,416.78L510.33,419.13L510.33,419.13L509.46,419.28L508.7,418.29L507.73,418.92L507.54,418.25L507.06,418.56L506.65,417.45L507.16,416.44L506,416.02L507.87,413.34L506.35,412.29L507.7,411.48L506.79,409.99L505.32,409.98L505.59,407.57L500.05,413.43L499.37,413.57L498.89,412.48L497.65,412.95L497.29,410.64L498.56,409.65L498.72,408.67L497.59,409.88L496.99,408.27L494.38,411.22L491.42,410.67L489.36,412.65L489.57,411.39L488.71,410.85L488.83,410.24L488.23,410.75L486.59,409.96L486.57,408.67L486.5,409.07L485.41,408.39L485.24,407.71L482.54,406.52L481.44,406.95L480.05,406.92L479.75,406.4L478.06,406.56L476.27,404.75L472.21,404.4L472.15,403.72L470.91,403.52L470,403.64L469.89,404.71L468.71,404.21L466.77,404.93L467.48,405.51L466.88,406.62L468.59,408.61L467.2,409.75L466.33,409.55L465.13,410.64L461.91,408.4L458.84,408.61L457.65,408.89L457.51,409.84L456.68,410.16L456.94,411.02L454.42,410.86L453.73,412.37L453.33,412.14L453.43,412.75L453.04,412.64L452.16,414.69L452.29,415.62L451.11,416.56L451.32,417.88L450.8,418.06L450.8,418.06L449.27,416.9L449.56,415.99L448.73,414.13L446.76,415.14L447.06,413.79L446.13,413.01L446.63,411.22L446.2,411.24L445.95,410.43L445.21,410.67L445.17,410.11L444.8,410.48L443.8,409.82L443.53,407.5L442.7,407.43L441.64,409.55L440.75,409.2L440.53,408.06L440.05,408.02L440.72,407.05L441.8,407.26L442.02,405.51L441.57,404.6L442.47,401.76L440.29,399.7L440.59,398.26L442.46,398.45L443.39,397.48L443.22,396.85L443.95,396.8L444.48,398.09L445.63,398.13L448.36,395.81L449.33,395.92L448.96,397.13L449.61,397.59L451.71,396.13L452.22,398.17L453.63,396.3L454.67,395.53L455.18,395.81L457.68,392.95L460.54,392.23L460.76,393.21L461.5,393.66L462.62,390.98L462.01,389.34L462.95,388.58L462.29,384.97L459.82,383.71L460.2,383.16L458.18,382.41L457.05,382.61L457.11,380.46z" />
+    </svg>
+    <div class="svg4">
+      <svg id="svg4" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="triangles">
+          <g id="lightGroup">
+            <path id="light1" opacity="0.6"
+              d="M53.4872 46.3509C55.7436 47.6536 55.7436 50.9105 53.4872 52.2132L13.718 75.174C11.4615 76.4767 8.64104 74.8483 8.64104 72.2428L8.64104 26.3213C8.64104 23.7158 11.4616 22.0874 13.718 23.3901L53.4872 46.3509Z" />
+          </g>
+          <g id="darkGroup">
+            <path id="dark1" opacity="0.8"
+              d="M74.9231 46.915C77.1795 48.2177 77.1795 51.4746 74.9231 52.7773L34.3077 76.2266C32.0513 77.5294 29.2308 75.9009 29.2308 73.2955L29.2308 26.3968C29.2308 23.7914 32.0513 22.1629 34.3077 23.4657L74.9231 46.915Z" />
+            <path id="dark2" opacity="0.8"
+              d="M54.6154 46.915C56.8718 48.2177 56.8718 51.4746 54.6154 52.7773L14 76.2266C11.7436 77.5294 8.92307 75.9009 8.92307 73.2955L8.92308 26.3968C8.92308 23.7914 11.7436 22.1629 14 23.4657L54.6154 46.915Z" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <script>
+    // 改
+    let btn1 = document.getElementById("btn1")
+    let l1 = document.getElementById("l1")
+    btn1.onclick = function () {
+      let len1 = l1.getAttribute('x1')
+      if (len1 == '50') {
+        l1.setAttribute('x1', '100')
+      } else {
+
+        l1.setAttribute('x1', '50')
+      }
+    }
+    //增
+    let btn2 = document.getElementById("btn2")
+    let svg = document.getElementById("l2")
+
+    btn2.onclick = function () {
+      let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+      let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+      // let line = document.createElementNS('http://www.w3.org/2000/svg', 'line')
+      circle.setAttribute('cx', '100')
+      circle.setAttribute('cy', '50')
+      circle.setAttribute('r', '40')
+      circle.setAttribute('stroke', 'black')
+      circle.setAttribute('stroke-width', '2')
+      circle.setAttribute('fill', 'red')
+      rect.setAttribute('width', '100')
+      rect.setAttribute('height', '200')
+      svg.appendChild(rect)
+      svg.appendChild(circle)
+    }
+    //地图路径
+    let btn3 = document.getElementById("btn3")
+    let l3 = document.getElementById("l3")
+    let svg4 = document.getElementById("svg4")
+    btn3.onclick = function () {
+      l3.setAttribute('height', '800')
+      l3.setAttribute('width', '800')
+    }
+    //demo
+    const triangles = document.getElementById('triangles');
+
+    triangles.onclick = (e) => {
+      const colors = ['red', 'blue', 'green', 'orange', 'pink', 'purple']
+      const rando = () => colors[Math.floor(Math.random() * colors.length)];
+      document.documentElement.style.cssText = `
+          --dark-color: ${rando()};
+          --light-color: ${rando()}; 
+          `
+    }
+    btn4.onclick = function () {
+      svg4.setAttribute('height', '120')
+      svg4.setAttribute('width', '100')
+    }
+
+
+
+  </script>
+  <style>
+    #l2 {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</body>
+
+</html>
